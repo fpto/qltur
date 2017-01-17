@@ -1,0 +1,11 @@
+<% @concerts.each do |concert| %> 
+<div class="concert"> 
+  <p class="title"><%= concert.title %></p> 
+  <p class="title"><%= concert.time %></p> 
+  <p class="title"><%= concert.date %></p>
+  <p class="title"><%= concert.venue %></p>
+  <p class="title"><%= concert.band %></p> 
+  <p class="title"><%= concert.description %></p> 
+  <p class="time"><%= concert.created_at %></p> 
+</div> 
+<% end %>
