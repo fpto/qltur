@@ -1,0 +1,17 @@
+<%= form_for(@concert) do |f| %>  
+  <div class="field"> 
+    
+    <%= f.label :concert %><br> 
+    <%= f.text_area :title %> 
+    <%= f.text_area :time %>
+    <%= f.text_area :date %> 
+    <%= f.text_area :venue %>
+    <%= f.text_area :band %>
+    <%= f.text_area :description %>
+    <%= f.text_area :image_url %>
+
+  </div> 
+  <div class="actions"> 
+    <%= f.submit "Create" %> 
+  </div> 
+<% end %>
