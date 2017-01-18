@@ -2,10 +2,11 @@
 <html>
 <head>
   <title>Qltur</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
 </head>
 <body>
 	<div class = "nav">
@@ -14,15 +15,21 @@
 				<li><a href="#">Join a concert</a></li>
 				<li><a href="#">Grab a beer</a></li>
 			</ul>
-			 <a class="brand" style="margin: 0; float: none;" href="#">
-                <img src="https://cdn2.iconfinder.com/data/icons/the-voice/300/Clasical-Guitar-512.png" height="42" width="42" /></a>
+			<!-- <a class="brand" style="margin: 0; float: none;" href="#">
+                <img src="https://cdn2.iconfinder.com/data/icons/the-voice/300/Clasical-Guitar-512.png" height="42" width="42" /></a> -->
 			<ul class = "pull-right">
 				<li><a href = "#"> Sign up</a></li>
 				<li><a href = "#"> Log in</a></li>
 			</ul>
      	</div>
 	</div>
-	<%= yield %>
 
+	<%= yield %>
+	
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Work in progress</p>
+      </div>
+    </footer>
 </body>
 </html>
