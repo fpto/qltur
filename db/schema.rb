@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121131856) do
+ActiveRecord::Schema.define(version: 20170121135041) do
 
   create_table "concerts", force: :cascade do |t|
     t.text     "title"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170121131856) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "image_url"
-    t.integer  "venue_id"
+    t.string   "venue_id"
   end
 
   add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id"
