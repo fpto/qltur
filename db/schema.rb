@@ -11,18 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118201036) do
+ActiveRecord::Schema.define(version: 20170121131856) do
 
   create_table "concerts", force: :cascade do |t|
     t.text     "title"
     t.text     "time"
     t.text     "date"
-    t.text     "venue"
     t.text     "band"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "image_url"
+    t.integer  "venue_id"
+  end
+
+  add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id"
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "website"
+    t.text     "facebook"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "state"
+    t.string   "country"
+    t.text     "cover_image"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
