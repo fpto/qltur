@@ -1,0 +1,21 @@
+
+<div class="jumbotron">
+ <div class="container">
+   <h1>The best venues in town</h1>
+    <p>You know it!</p>
+ </div>
+</div> 
+<div class = "row">
+  <div class = "container">
+    <% @venues.each do |venue| %> 
+    <div class="col-md-3">
+		<div class="concert" style="background-image: url(<%= venue.cover_image %>)"> 
+  		<p class="title"><%= venue.name %></p> 
+			<p class="description"><%= venue.description %></p>
+              <%= link_to "Learn more", venue_path(venue) %>
+		</div> 
+	</div>
+  <% end %>
+</div>
+</div>
+

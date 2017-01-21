@@ -1,0 +1,17 @@
+<div class="concert">
+  <div class="container">
+    <h2><%= @venue.name %></h2>
+
+    <div class="cards row">
+      <% @concerts.each do |d| %>
+      <div class="card col-xs-4">
+        <%= image_tag d.image_url %>
+        <h2><%= d.title %></h2>
+        <p><%= d.description %></p>
+        
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
