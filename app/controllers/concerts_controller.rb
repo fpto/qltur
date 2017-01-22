@@ -13,6 +13,9 @@ class ConcertsController < ApplicationController
     		render 'new' 
   		end 
 	end
+  def show
+      @concert = Concert.find(params[:id]) 
+  end
 	
 	private 
   	def concert_params 
