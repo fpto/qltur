@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   root'pages#home'
+ 
   get '/concerts' => 'concerts#index' 
   get 'concerts/new' => 'concerts#new'
   post 'concerts' => 'concerts#create'
   get 'concerts/:id' => 'concerts#show', as: :concert
 
-  get '/venues' => 'venues#index'
+  get '/venues' => 'venues#index' 
+  get 'venues/new' => 'venues#new'
   get '/venues/:id' => 'venues#show', as: :venue
+  post 'venues' => 'venues#create'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

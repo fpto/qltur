@@ -1,0 +1,37 @@
+<%= form_for(@venue) do |f| %>  
+  <div class="field"> 
+    <%= f.label :venue %><br> 
+    <%= label_tag(:name, "Name:") %><br> 
+    <%= f.text_area :name %> <br> 
+    <%= label_tag(:phone, "Phone:") %><br> 
+    <%= f.text_area :phone %> <br> 
+    <%= label_tag(:email, "Email:") %><br> 
+    <%= f.text_area :email %> <br> 
+    <%= label_tag(:website, "Website:") %><br> 
+    <%= f.text_area :website %><br> 
+    <%= label_tag(:facebook, "facebook:") %><br> 
+    <%= f.text_area :facebook %><br> 
+    <%= label_tag(:address1, "Address 1:") %><br> 
+    <%= f.text_area :address1 %><br> 
+    <%= label_tag(:address2, "Address 2:") %><br> 
+    <%= f.text_area :address2 %><br> 
+    <%= label_tag(:city, "City:") %><br> 
+    <%= f.text_area :city %><br> 
+    <%= label_tag(:postal_code, "Postal Code:") %><br> 
+    <%= f.text_area :postal_code %><br> 
+    <%= label_tag(:State, "State:") %><br> 
+    <%= f.text_area :state %><br> 
+    <%= label_tag(:country, "Country:") %><br> 
+    <%= f.text_area :country %><br> 
+    <%= label_tag(:cover_image, "Cover URL:") %><br> 
+    <%= f.text_area :cover_image %><br> 
+    <%= label_tag(:description, "Description:") %><br> 
+    <%= f.text_area :description %><br> 
+
+
+  </div> 
+  <div class="actions"> 
+    <%= f.submit "Create" %> 
+  </div> 
+<% end %>
+

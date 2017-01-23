@@ -2,6 +2,7 @@ class ConcertsController < ApplicationController
 	def index
 		@concerts = Concert.all
 	end
+
 	def new
   		@concert = Concert.new 
 	end
@@ -19,6 +20,6 @@ class ConcertsController < ApplicationController
 	
 	private 
   	def concert_params 
-    	params.require(:concert).permit(:title, :time, :date, :venue, :band, :description, :image_url) 
+    	params.require(:concert).permit(:title, :time, :date, :band, :description, :image_url, :venue_id) 
   	end
 end
