@@ -9,7 +9,7 @@
   <div class = "container">
     <% @venues.each do |venue| %> 
     <div class="col-md-3">
-		<div class="venue" style="background-image: url(<%= venue.cover_image %>)"> 
+		<div class="venue" style="background-image: url(<%= venue.cover_image %>); background-size: cover;"> 
   		<p class="title"><%= venue.name %></p> 
 			<p class="description"><%= venue.description %></p>
               <%= link_to "Learn more", venue_path(venue) %>
