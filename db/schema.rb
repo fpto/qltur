@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121153440) do
+ActiveRecord::Schema.define(version: 20170121131856) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "concerts", force: :cascade do |t|
     t.text     "title"
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170121153440) do
     t.integer  "venue_id"
   end
 
-  add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id"
+  add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id", using: :btree
 
   create_table "venues", force: :cascade do |t|
     t.string   "name"
@@ -45,4 +48,5 @@ ActiveRecord::Schema.define(version: 20170121153440) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "concerts", "venues"
 end
