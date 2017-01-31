@@ -8,13 +8,14 @@
 <div class = "row">
   <div class = "container">
     <% @concerts.each do |concert| %> 
-    <div class="col-md-3">
-		<div class="concert" style="background-image: url(<%= concert.image_url %>)"> 
-  		<p class="title"><%= concert.title %></p> 
-			<p class="description"><%= concert.description %></p>
-		</div> 
-	</div>
+    <a href=" <%=  concert_path(concert) %>">
+      <div class="col-md-3">
+    		<div class="concert" style="background-image: url(<%= concert.image_url %>)"> 
+      		<p class="title"><%= concert.title %></p> 
+    			<p class="description"><%= concert.description %></p>
+    		</div> 
+  	  </div>
+    </a>
   <% end %>
 </div>
 </div>
-    <%= link_to 'New Concert', "concerts/new" %>

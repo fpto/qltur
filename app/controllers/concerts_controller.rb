@@ -16,6 +16,11 @@ class ConcertsController < ApplicationController
 	end
   def show
       @concert = Concert.find(params[:id]) 
+      @venue = @concert.venue
+      @cleanAddress1 = @venue.address1.gsub(' ','+')
+      @cleanPostalcode = @venue.postal_code.gsub(' ','+')
+      @cleanCity = @venue.city.gsub(' ','+')
+      @cleanCountry = @venue.country.gsub(' ','+')
   end
 	
 	private 

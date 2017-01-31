@@ -1,0 +1,31 @@
+<div class = "row">
+  <div class="container">
+    <div class = "col-md-12" style="background-image: url(<%= @concert.image_url %>); background-size: cover; color: white" >
+      <h1><%= @concert.title %></h1>
+      <p><%= @concert.date %> <%= @concert.time %></p>
+      <p><%= @venue.name %> </p>
+    </div>
+  </div>
+</div>
+<div class = "row">
+  <div class = "container">
+    <div class = "col-md-6">
+      <h2>What is it about? </h2>
+      <p><%= @concert.description %> </p>
+    </div>
+      <div class = "col-md-6">
+      <h1>Where?</h1>
+      <p><%= @venue.name %>, <%= @venue.address1 %>, <%= @venue.city %>, <%= @venue.postal_code %>   </p>
+      <p></p>
+      <iframe
+        width="100%"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCiY34QREeRPpC4AqOFUw8nd_nyGh1i1xY  &q=<%= @cleanAddress1 %>,<%=@cleanPostalcode%>,<%=@cleanCity%>,<%=@cleanCountry%>" allowfullscreen>
+      </iframe>
+    </div>
+</div>
+
+  </div>
+</div>
+
