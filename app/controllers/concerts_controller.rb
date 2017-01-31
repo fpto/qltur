@@ -22,6 +22,17 @@ class ConcertsController < ApplicationController
       @cleanCity = @venue.city.gsub(' ','+')
       @cleanCountry = @venue.country.gsub(' ','+')
   end
+  def edit 
+    @concert = Concert.find(params[:id]) 
+  end
+    def update
+    @concert = Concert.find(params[:id])
+      if @concert.update(concert_params)
+        redirect_to @concert
+      else
+        render 'edit'
+      end
+  end
 	
 	private 
   	def concert_params 

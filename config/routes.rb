@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   get 'concerts/new' => 'concerts#new'
   post 'concerts' => 'concerts#create'
   get 'concerts/:id' => 'concerts#show', as: :concert
+  get '/concerts/:id/edit' => 'concerts#edit', as: :edit_concert 
+  patch '/concerts/:id' => 'concerts#update'
 
   get '/venues' => 'venues#index' 
   get 'venues/new' => 'venues#new'
   get '/venues/:id' => 'venues#show', as: :venue
   post 'venues' => 'venues#create'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
