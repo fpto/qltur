@@ -3,7 +3,7 @@
     <div class = "col-md-12" style="background-image: url(<%= @concert.image_url %>); background-size: cover; color: white" >
       <h1><%= @concert.title %></h1>
       <p><%= @concert.date %> <%= @concert.time %></p>
-      <p><%= @venue.name %> </p>
+      <p><%= @venue.name %> <%=@concert.created_at%></p>
     </div>
   </div>
 </div>

@@ -1,11 +1,21 @@
-<div class="main">
-  <div class="container">
-        <div class="jumbotron">
-      <div class="container">
-        <h1>Find live music near you</h1>
-        <p>Awesome music is waiting for you.</p>
+<div class="jumbotron">
+ <div class="container">
+   <h1>Find live music in Berlin</h1>
+    <p>Weil du wunderbar bist.</p>
+ </div>
+</div> 
+<div class = "row">
+  <div class = "container">
+    <h2> This week in Berlin </h2>
+    <% @thisWeekConcerts.each do |concert| %> 
+    <a href=" <%=  concert_path(concert) %>">
+      <div class="col-md-3">
+        <div class="concert" style="background-image: url(<%= concert.image_url %>)"> 
+          <p class="title"><%= concert.title %></p> 
+          <p class="description"><%= concert.description %></p>
+        </div> 
       </div>
-    </div> 
-    <p><img src="http://s2.quickmeme.com/img/89/890476d8e35598cbaaaef949fe020ebf1fd13bff864e1a8faa5f8c5aa459c439.jpg" alt="bob" ></p>
-  </div>
+    </a>
+  <% end %>
+</div>
 </div>
