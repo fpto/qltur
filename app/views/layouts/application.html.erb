@@ -30,6 +30,13 @@
 					<li><a href="/venues">Venues</a></li>
 					<li><a href = "/venues/new"> New Venue</a></li>
 					<li><a href = "/concerts/new"> New concert</a></li>
+					<% if current_user %> 
+    <li><%= current_user.email %></li> 
+    <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+<% else %> 
+    <li><%= link_to "Login", 'login' %></a></li> 
+    <li><%= link_to "Signup", 'signup' %></a></li> 
+<% end %>
 				</ul>
 			</div>
      	</div>

@@ -1,4 +1,5 @@
 class ConcertsController < ApplicationController
+before_action :require_user, only: [:index, :show, :new]
 	def index
 		@concerts = Concert.all
 	end

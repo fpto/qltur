@@ -1,4 +1,5 @@
 class VenuesController < ApplicationController
+before_action :require_user, only: [:index, :show, :new]
 	def index
 		@venues = Venue.all
 	end
