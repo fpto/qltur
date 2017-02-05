@@ -1,5 +1,7 @@
 class ConcertsController < ApplicationController
 before_action :require_user, only: [:index, :show, :new]
+before_action :require_editor, only: [:edit]
+before_action :require_admin, only: [:destroy]
 	def index
 		@concerts = Concert.all
 	end
@@ -34,6 +36,11 @@ before_action :require_user, only: [:index, :show, :new]
         render 'edit'
       end
   end
+  def destroy
+    @concert = Concert.find(params[:id])
+    @concert.destroy
+    redirect_to root_url
+  end 
 	
 	private 
   	def concert_params 

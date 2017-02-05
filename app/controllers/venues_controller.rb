@@ -1,5 +1,7 @@
 class VenuesController < ApplicationController
 before_action :require_user, only: [:index, :show, :new]
+before_action :require_editor, only: [:edit]
+before_action :require_admin, only: [:destroy]
 	def index
 		@venues = Venue.all
 	end
@@ -26,6 +28,11 @@ before_action :require_user, only: [:index, :show, :new]
       @cleanCountry = @venue.country.gsub(' ','+')
   end
 
+  def destroy
+    @venue = Venue.find(params[:id])
+    @venue.destroy
+    redirect_to root_url
+  end 
   
   private 
     def venue_params 

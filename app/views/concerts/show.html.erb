@@ -26,5 +26,14 @@
     </div>
   </div>
 </div>
-<p><%= link_to "Edit", edit_concert_path(@concert) %><p>
+<% if (current_user && current_user.editor?) or (current_user && current_user.admin?)  %> 
+  <p> 
+    <%= link_to "Edit Concert", edit_concert_path(@concert) %> 
+  </p> 
+<% end %>
+<% if current_user && current_user.admin? %> 
+  <p ><%= link_to "Delete Concert", concert_path(@concert), method: "delete" %><p> 
+<% end %>
+
+
 
