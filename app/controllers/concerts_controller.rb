@@ -1,6 +1,6 @@
 class ConcertsController < ApplicationController
-before_action :require_user, only: [:index, :show, :new]
-before_action :require_editor, only: [:edit]
+before_action :require_user, only: [:index, :show]
+before_action :require_editor, only: [:edit, :update]
 before_action :require_admin, only: [:destroy]
 	def index
 		@concerts = Concert.all

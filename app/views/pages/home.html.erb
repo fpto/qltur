@@ -4,18 +4,24 @@
     <p>Weil du wunderbar bist.</p>
  </div>
 </div> 
-<div class = "row">
-  <div class = "container">
-    <h2> This week in Berlin </h2>
-    <% @thisWeekConcerts.each do |concert| %> 
-    <a href=" <%=  concert_path(concert) %>">
-      <div class="col-md-3">
-        <div class="concert" style="background-image: url(<%= concert.image_url %>)"> 
-          <p class="title"><%= concert.title %></p> 
-          <p class="description"><%= concert.description %></p>
-        </div> 
-      </div>
-    </a>
-  <% end %>
+
+
+
+<!-- This the This week in Berlin section -->
+<div class = "thisWeekConcerts">
+  <div class = "row">
+    <div class = "container">
+      <h2> This week in Berlin </h2>
+      <% @thisWeekConcerts.each do |concert| %> 
+      <a href=" <%=  concert_path(concert) %>">
+        <div class="col-md-3">
+          <div class="concert" style="background-image: url(<%= concert.image_url %>)"> 
+            <p class="title"><%= concert.title %></p> 
+            <p class="description"><%= concert.description %></p>
+          </div> 
+        </div>
+      </a>
+    <% end %>
+  </div>
 </div>
 </div>
