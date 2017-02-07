@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 .nav{
   background-color: #1D0033;
 }
@@ -39,7 +40,7 @@
 }
 .jumbotron {
   color: white;
-  background-image: url("https://static.pexels.com/photos/197006/pexels-photo-197006.jpeg") ; 
+  background-image: url("https://static.pexels.com/photos/197006/pexels-photo-197006.jpeg") ;
   background-size: cover;
   background-position: center;
 }
@@ -54,6 +55,14 @@
   width: 100%;
 }
 /* Sticky footer*/
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
 html {
   position: relative;
   min-height: 100%;
