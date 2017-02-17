@@ -4,4 +4,6 @@ class PagesController < ApplicationController
 		range = (DateTime.now..(DateTime.now + 7.days))
 		@thisWeekConcerts = @concerts.select{|concert| range.cover?(concert.date)}
 	end
+	def imprint
+	end
 end

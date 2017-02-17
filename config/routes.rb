@@ -1,21 +1,22 @@
 Rails.application.routes.draw do
   root'pages#home'
- 
-  get '/concerts' => 'concerts#index' 
+  get '/pages/imprint' => 'pages#imprint'
+
+  get '/concerts' => 'concerts#index'
   get 'concerts/new' => 'concerts#new'
   post 'concerts' => 'concerts#create'
   get 'concerts/:id' => 'concerts#show', as: :concert
-  get '/concerts/:id/edit' => 'concerts#edit', as: :edit_concert 
+  get '/concerts/:id/edit' => 'concerts#edit', as: :edit_concert
   patch '/concerts/:id' => 'concerts#update'
   resources :concerts
 
-  get '/venues' => 'venues#index' 
+  get '/venues' => 'venues#index'
   get 'venues/new' => 'venues#new'
   get '/venues/:id' => 'venues#show', as: :venue
   post 'venues' => 'venues#create'
   resources :venues
 
-  get 'signup'  => 'users#new' 
+  get 'signup'  => 'users#new'
   resources :users
 
   get 'login' => 'sessions#new'
