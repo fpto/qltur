@@ -1,21 +1,25 @@
-
-<div class="jumbotron">
- <div class="container">
-   <h1>Find live music in Berlin</h1>
-    <p>Weil du wunderbar bist.</p>
+<div class = "jumbotron-container" >
+  <div class="jumbotron layer">
+   <div class="container">
+     <h1>Best giggs in Berlin</h1>
+     <p>All over the place</p>
+   </div>
  </div>
-</div> 
+</div>
+
 <div class = "row">
   <div class = "container">
-    <% @concerts.each do |concert| %> 
-    <a href=" <%=  concert_path(concert) %>">
-      <div class="col-md-3">
-    		<div class="concert" style="background-image: url(<%= concert.image_url %>)"> 
-      		<p class="title"><%= concert.title %></p> 
-    			<p class="description"><%= concert.description %></p>
-    		</div> 
-  	  </div>
-    </a>
-  <% end %>
-</div>
+      <% @concerts.each do |concert| %>
+      <a href=" <%=  concert_path(concert) %>">
+        <div class="col-md-3">
+      		<div class="tile-container" style="background-image: url(<%= concert.image_url %>); background-color: rgba(29, 0, 51, 0.5)">
+            <div class = "tile-content">
+              <p class="title"><%= concert.title %></p>
+        			<p class="description"><%= concert.description %></p>
+      		  </div>
+    	    </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
 </div>

@@ -15,7 +15,7 @@
  */
 
 .nav{
-  background-color: #1D0033;
+  background-color: #1A0C25;
 }
 .navbar-default .navbar-nav>li>a {
   color: white;
@@ -32,17 +32,23 @@
 .nav a {
   text-decoration: none;
 }
+a:hover {
+  color: #FFA919 !important;
+}
 .brand {
   position: absolute;
   left: 50%;
   margin-left: -50px !important;  /* 50% of your logo width */
   display: block;
 }
-.jumbotron {
-  color: white;
-  background-image: url("https://static.pexels.com/photos/197006/pexels-photo-197006.jpeg") ;
+.jumbotron-container{
+  background-image: url("https://static.pexels.com/photos/36090/pexels-photo.jpg") ;
   background-size: cover;
   background-position: center;
+}
+.jumbotron {
+  color: white;
+  text-shadow: 0 1px 0 black;
 }
 .thisWeekConcerts{
   padding-bottom: 40px;
@@ -58,6 +64,24 @@
   height: 400px;
   width: 100%;
 }
+
+.tile-container {
+  padding: 16px;
+  margin-bottom: 10px;
+  height: 180px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.tile-content{
+  font-weight: 300;
+  color: white;
+  text-shadow: 0 1px 0 black;
+  overflow:hidden;
+}
+.tile-content .title {
+	font-size: 20px;
+	font-weight: 500;
+}
+
 /* Sticky footer*/
 html,body
 {
@@ -83,4 +107,10 @@ footer {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 160px;
+}
+
+/* Layer for readibility */
+.layer {
+    background-color: rgba(29, 0, 51, 0.5);
+
 }

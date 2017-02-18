@@ -1,22 +1,25 @@
-
-<div class="jumbotron">
- <div class="container">
-   <h1>The best venues in town</h1>
-    <p>You know it!</p>
+<div class = "jumbotron-container" >
+  <div class="jumbotron layer">
+   <div class="container">
+     <h1>The best venues in town</h1>
+      <p>You know it!</p>
+   </div>
  </div>
-</div> 
+</div>
+
 <div class = "row">
   <div class = "container">
-    <% @venues.each do |venue| %> 
+    <% @venues.each do |venue| %>
       <a href=" <%=  venue_path(venue) %>">
         <div class="col-md-3">
-      		<div class="venue" style="background-image: url(<%= venue.cover_image %>); background-size: cover;"> 
-        		<p class="title"><%= venue.name %></p> 
-      			<p class="description"><%= venue.description %></p>
-      		</div> 
-    	  </div>
+      		<div class="tile-container" style="background-image: url(<%= venue.cover_image %>); background-size: cover;">
+            <div class = "tile-content"
+          		<p class="title"><%= venue.name %></p>
+        			<p class="description"><%= venue.description %></p>
+      		  </div>
+    	    </div>
+        </div>
       </a>
     <% end %>
   </div>
 </div>
-
