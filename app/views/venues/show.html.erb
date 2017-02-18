@@ -16,24 +16,26 @@
       </iframe>
     </div>
 </div>
-<div class = "container">
-  <h2> Coming up </h2>
-  <div class = "row">
-    <div class = "container">
-      <% @concerts.each do |concert| %> 
+<div class = "row">
+  <div class = "container">
+      <h2> Coming up </h2>
+      <% @concerts.each do |concert| %>
       <a href=" <%=  concert_path(concert) %>">
         <div class="col-md-3">
-            <div class="venue" style="background-image: url(<%= concert.image_url %>); background-size: cover;  "> 
-              <p class="title"><%= concert.title %></p> 
-              <p class="description"><%= concert.description %></p>
-            </div> 
+      		<div class="tile-container" style="background-image: url(<%= concert.image_url %>); background-color: rgba(29, 0, 51, 0.5)">
+            <div class = "tile-content">
+              <p class="title"><%= concert.title %></p>
+        			<p class="description"><%= concert.description %></p>
+      		  </div>
+    	    </div>
         </div>
       </a>
-      <% end %>
+    <% end %>
     </div>
-  </div>
-  <% if current_user && current_user.admin? %> 
-  <p ><%= link_to "Delete Venue", venue_path(@venue), method: "delete" %><p> 
-  <% end %>
-
+<div class = "container">
+    <% if current_user && current_user.admin? %>
+      <p ><%= link_to "Delete Venue", venue_path(@venue), method: "delete" %></p>
+    <% end %>
+</div>        
+</div>
 </div>
