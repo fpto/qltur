@@ -1,19 +1,15 @@
 <div class = "jumbotron-container" >
   <div class="jumbotron layer">
    <div class="container">
-     <h1>Find live music in Berlin</h1>
-      <p>Weil du wunderbar bist.</p>
+     <h1><%= @user.first_name %> <%= @user.last_name %> </h1>
+      <p>This guy knows what time it is!</p>
    </div>
  </div>
 </div>
 
-
-<!-- This the This week in Berlin section -->
-<div class = "thisWeekConcerts">
-  <div class = "row">
   <div class = "row">
     <div class = "container">
-        <h2> This week in Berlin </h2>
+        <h2>and is keeping an eye on this giggs</h2>
         <% @concerts.each do |concert| %>
         <a href=" <%=  concert_path(concert) %>">
           <div class="col-md-3">
@@ -29,4 +25,3 @@
       <% end %>
     </div>
   </div>
-</div>

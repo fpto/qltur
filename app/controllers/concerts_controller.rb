@@ -7,26 +7,28 @@ before_action :require_admin, only: [:destroy]
 	end
 
 	def new
-  		@concert = Concert.new 
+  		@concert = Concert.new
 	end
-	def create 
-  		@concert = Concert.new(concert_params) 
-  		if @concert.save 
-    		redirect_to '/concerts' 
-  		else 
-    		render 'new' 
-  		end 
+	def create
+  		@concert = Concert.new(concert_params)
+  		if @concert.save
+    		redirect_to '/concerts'
+  		else
+    		render 'new'
+  		end
 	end
   def show
-      @concert = Concert.find(params[:id]) 
+      @concert = Concert.find(params[:id])
       @venue = @concert.venue
       @cleanAddress1 = @venue.address1.gsub(' ','+')
       @cleanPostalcode = @venue.postal_code.gsub(' ','+')
       @cleanCity = @venue.city.gsub(' ','+')
       @cleanCountry = @venue.country.gsub(' ','+')
+
+			@users = @concert.users
   end
-  def edit 
-    @concert = Concert.find(params[:id]) 
+  def edit
+    @concert = Concert.find(params[:id])
   end
     def update
     @concert = Concert.find(params[:id])
@@ -40,10 +42,10 @@ before_action :require_admin, only: [:destroy]
     @concert = Concert.find(params[:id])
     @concert.destroy
     redirect_to root_url
-  end 
-	
-	private 
-  	def concert_params 
-    	params.require(:concert).permit(:title, :time, :date, :band, :description, :image_url, :venue_id) 
+  end
+
+	private
+  	def concert_params
+    	params.require(:concert).permit(:title, :time, :date, :band, :description, :image_url, :venue_id)
   	end
 end

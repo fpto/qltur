@@ -32,7 +32,10 @@
 .nav a {
   text-decoration: none;
 }
-a:hover {
+.nav a:hover {
+  color: #FFA919 !important;
+}
+.footer a:hover {
   color: #FFA919 !important;
 }
 .brand {
@@ -70,17 +73,27 @@ a:hover {
   margin-bottom: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow:hidden;
+  background-color: #1A0C25;
 }
-.tile-content{
+.tile-container a{
+  color:white;
+  text-decoration: none;
+}
+.tile-content {
   font-weight: 300;
   height: 180px;
   overflow:hidden;
-  color: white;
   text-shadow: 0 1px 0 black;
 }
-.tile-content .title {
+.tile-title {
 	font-size: 20px;
 	font-weight: 500;
+  overflow:hidden;
+  height: 50px;
+}
+.tile-description{
+  height: 80px;
+  overflow:hidden;
 }
 
 /* Sticky footer*/
@@ -108,6 +121,17 @@ footer {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 160px;
+}
+.my-concert-button{
+  background-color: red;
+  border-style: none;
+  margin-top: 30px;
+}
+.my-concert-button:hover{
+  background-color: #09B24B;
+}
+.my-concert-button:focus{
+  background-color: #09B24B;
 }
 
 /* Layer for readibility */

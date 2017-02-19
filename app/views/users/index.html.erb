@@ -1,0 +1,25 @@
+<div class = "jumbotron-container" >
+  <div class="jumbotron layer">
+   <div class="container">
+     <h1>These are like the coolest people ever</h1>
+      <p>Representing!</p>
+   </div>
+ </div>
+</div>
+
+<div class = "row">
+  <div class = "container">
+    <% @users.each do |user| %>
+      <a href=" <%=  user_path(user) %>">
+        <div class="col-md-3">
+      		<div class="tile-container">
+            <div class = "tile-content"
+          		<p class="tile-title"><%= user.first_name %> <%= user.last_name %></p>
+        			  <%= link_to "Learn more", user_path(user) %>
+      		  </div>
+    	    </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>

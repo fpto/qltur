@@ -14,9 +14,24 @@
       <p><%= @concert.description %> </p>
     </div>
       <div class = "col-md-6">
-      <h1>Where?</h1>
-      <p><%= @venue.name %>, <%= @venue.address1 %>, <%= @venue.city %>, <%= @venue.postal_code %>   </p>
-      <p></p>
+        <div class = "row">
+          <div class = "col-md-6">
+            <h1>Where?</h1>
+            <p><%= @venue.name %>, <%= @venue.address1 %>, <%= @venue.city %>, <%= @venue.postal_code %>   </p>
+            <p></p>
+          </div>
+          <div class = "container">
+            <div class = "col-md-6">
+              <button type="button" class="btn btn-primary btn-lg my-concert-button">I'm coming</button>
+              <h2>Attendees</h2>
+             <% @users.each do |attendee| %>
+             <div class="attendee-container">
+               <p><%= attendee.first_name %></h3>
+             </div>
+             <% end %>
+            </div>
+          </div>
+
       <iframe
         width="100%"
         height="450"
@@ -26,14 +41,11 @@
     </div>
   </div>
 </div>
-<% if (current_user && current_user.editor?) or (current_user && current_user.admin?)  %> 
-  <p> 
-    <%= link_to "Edit Concert", edit_concert_path(@concert) %> 
-  </p> 
+<% if (current_user && current_user.editor?) or (current_user && current_user.admin?)  %>
+  <p>
+    <%= link_to "Edit Concert", edit_concert_path(@concert) %>
+  </p>
 <% end %>
-<% if current_user && current_user.admin? %> 
-  <p ><%= link_to "Delete Concert", concert_path(@concert), method: "delete" %><p> 
+<% if current_user && current_user.admin? %>
+  <p ><%= link_to "Delete Concert", concert_path(@concert), method: "delete" %><p>
 <% end %>
-
-
-
