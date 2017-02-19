@@ -14,7 +14,7 @@
   <div class = "row">
     <div class = "container">
         <h2> This week in Berlin </h2>
-        <% @concerts.each do |concert| %>
+        <% @thisWeekConcerts.each do |concert| %>
         <a href=" <%=  concert_path(concert) %>">
           <div class="col-md-3">
         		<div class="tile-container" style="background-image: url(<%= concert.image_url %>); background-color: rgba(29, 0, 51, 0.5)">

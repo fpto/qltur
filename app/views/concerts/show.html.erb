@@ -22,7 +22,7 @@
           </div>
           <div class = "container">
             <div class = "col-md-6">
-              <!-- Button for attendance -->>
+              <!-- Button for attendance -->
                 <%= form_for(@attendee) do |f| %>
                 <%= f.hidden_field :user_id, value: session[:user_id] %>
                 <%= f.hidden_field :concert_id, value: @concert.id %>
@@ -30,26 +30,29 @@
                 <%= f.submit "I'm coming", :class=> "btn btn-primary btn-lg my-concert-button" %>
                 <% end %>
 
-              <!-- Attendees -->>
+              <!-- Attendees -->
               <h2>Attendees</h2>
              <% @users.each do |attendee| %>
-             <div class="attendee-container">
-               <p><%= attendee.first_name %></h3>
+             <div class="attendee-container col-md-2">
+               <p><%= attendee.first_name %></p>
              </div>
              <% end %>
 
             </div>
           </div>
 
+<!-- Google maps frame -->
       <iframe
         width="100%"
         height="450"
         frameborder="0" style="border:0"
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCiY34QREeRPpC4AqOFUw8nd_nyGh1i1xY  &q=<%= @cleanAddress1 %>,<%=@cleanPostalcode%>,<%=@cleanCity%>,<%=@cleanCountry%>" allowfullscreen>
       </iframe>
+
     </div>
   </div>
 </div>
+<!-- Links appear depending of the user role -->
 <% if (current_user && current_user.editor?) or (current_user && current_user.admin?)  %>
   <p>
     <%= link_to "Edit Concert", edit_concert_path(@concert) %>
