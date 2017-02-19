@@ -12,10 +12,11 @@
     <% @venues.each do |venue| %>
       <a href=" <%=  venue_path(venue) %>">
         <div class="col-md-3">
-      		<div class="tile-container" style="background-image: url(<%= venue.cover_image %>); background-size: cover;">
-            <div class = "tile-content"
+      		<div class="tile-container" style="background-image: url(<%= venue.cover_image %>); background-color: rgba(29, 0, 51, 0.5)">
+            <div class = "tile-content">
           		<p class="tile-title"><%= venue.name %></p>
-        			<p class="description"><%= venue.description %></p>
+        			<p class="tile-description"><%= venue.description %></p>
+              <%= link_to "Learn more", venue_path(venue) %>
       		  </div>
     	    </div>
         </div>

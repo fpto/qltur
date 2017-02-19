@@ -17,5 +17,7 @@
 #v2 = Venue.create(name: "Yorkschlösschen", phone: "030 - 215 80 70", email: "info@yorckschloesschen.de ", website: "http://www.yorckschloesschen.de/", facebook: "https://www.facebook.com/Daehmlow", address1:"Yorckstr. 15", address2:"", city:"Berlin", postal_code: "10965", state:"Berlin", country:"Germany",cover_image: "http://www.yorckschloesschen.de/bilder/sonst/panorama.jpg", description: "The Yorckschlösschen has existed under same name for over 120 years now and has long-since become a Kreuzberg institution." )
 #Concert.create(title: "Keith Dunn & The Love Gloves", time: "21:00", date: "2017-2-4", band: "Keith Dunn & The Love Gloves", description: "Blues + Deltabilly", image_url: "https://i.ytimg.com/vi/8tUUcOMw9II/maxresdefault.jpg", venue_id: v2.id)
 
-a1 = Attendee.create(user_id: 1, concert_id: 2, response: 1)
-a2 = Attendee.create(user_id: 1, concert_id: 1, response: 1)
+#a1 = Attendee.create(user_id: 1, concert_id: 2, response: 1)
+#a2 = Attendee.create(user_id: 1, concert_id: 1, response: 1)
+
+#u1 = User.create(first_name: "Fabricio", last_name: "Puerto", email: "fabricio.puerto@outlook.com", password: "masu", role: "admin")
