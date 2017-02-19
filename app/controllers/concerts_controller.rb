@@ -25,7 +25,10 @@ before_action :require_admin, only: [:destroy]
       @cleanCity = @venue.city.gsub(' ','+')
       @cleanCountry = @venue.country.gsub(' ','+')
 
+			#saves users coming to this concert
 			@users = @concert.users
+			#creates attendee for I'm coming function
+			@attendee = Attendee.new
   end
   def edit
     @concert = Concert.find(params[:id])

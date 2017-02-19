@@ -22,13 +22,22 @@
           </div>
           <div class = "container">
             <div class = "col-md-6">
-              <button type="button" class="btn btn-primary btn-lg my-concert-button">I'm coming</button>
+              <!-- Button for attendance -->>
+                <%= form_for(@attendee) do |f| %>
+                <%= f.hidden_field :user_id, value: session[:user_id] %>
+                <%= f.hidden_field :concert_id, value: @concert.id %>
+                <%= f.hidden_field :response, value: 2 %>
+                <%= f.submit "I'm coming", :class=> "btn btn-primary btn-lg my-concert-button" %>
+                <% end %>
+
+              <!-- Attendees -->>
               <h2>Attendees</h2>
              <% @users.each do |attendee| %>
              <div class="attendee-container">
                <p><%= attendee.first_name %></h3>
              </div>
              <% end %>
+
             </div>
           </div>
 
