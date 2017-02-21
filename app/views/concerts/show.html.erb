@@ -3,11 +3,12 @@
   <div class="container">
     <div class = "concert-banner col-md-12" style="background-image: url(<%= @concert.image_url %>);" >
       <div class = "row">
-        <div class = "col-md-8">
+        <div class = "col-md-6">
       <h1><%= @concert.title %></h1>
         </div>
-    <div class = "col-md-4">
+    <div class = "col-md-6" style = "text-align: center;">
       <h3><%= @concert.date.strftime("%B %d") %> at <%= @concert.time.strftime("%H:%M ") %></h3>
+      <h3>at <a href ="/venues/<%= @venue.id %>"><%= @venue.name %></a> </h3>
     </div>
     </div>
     </div>

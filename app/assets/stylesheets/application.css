@@ -127,6 +127,13 @@ footer {
   color: white;
   text-shadow: 0 1px 0 black;
 }
+.concert-banner h3 a{
+  color: white;
+  text-decoration: none;
+}
+.concert-banner h3 a:hover{
+  color: #FFA919;
+}
 .joining-button{
   border-style: none;
   margin-top: 30px;
