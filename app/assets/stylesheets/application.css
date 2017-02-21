@@ -122,6 +122,11 @@ footer {
   /* Set the fixed height of the footer here */
   height: 160px;
 }
+.concert-banner{
+  background-size: cover;
+  color: white;
+  text-shadow: 0 1px 0 black;
+}
 .joining-button{
   border-style: none;
   margin-top: 30px;
