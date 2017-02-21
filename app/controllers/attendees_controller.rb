@@ -3,7 +3,8 @@ class AttendeesController < ApplicationController
   def create
       @attendee = Attendee.new(attendee_params)
       if @attendee.save
-        redirect_to '/concerts'
+        redirect_to :back
+        # redirect_to '/concerts'
       else
         render '/'
       end

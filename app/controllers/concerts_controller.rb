@@ -20,15 +20,24 @@ before_action :require_admin, only: [:destroy]
   def show
       @concert = Concert.find(params[:id])
       @venue = @concert.venue
+			# TODO refactor into an object
       @cleanAddress1 = @venue.address1.gsub(' ','+')
       @cleanPostalcode = @venue.postal_code.gsub(' ','+')
       @cleanCity = @venue.city.gsub(' ','+')
       @cleanCountry = @venue.country.gsub(' ','+')
 
 			#saves users coming to this concert
-			@users = @concert.users
+			@concerts = Concert.find(params[:id])
+			@attendees = @concerts.users
 			#creates attendee for I'm coming function
 			@attendee = Attendee.new
+			#Checking if current_user is attending
+			if @attendees.include? current_user
+				@is_attending = true
+			else
+				@is_attending = false
+			end
+
   end
   def edit
     @concert = Concert.find(params[:id])

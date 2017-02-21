@@ -1,3 +1,4 @@
+
 <div class = "row">
   <div class="container">
     <div class = "col-md-12" style="background-image: url(<%= @concert.image_url %>); background-size: cover; color: white" >
@@ -7,39 +8,48 @@
     </div>
   </div>
 </div>
+
 <div class = "row">
   <div class = "container">
     <div class = "col-md-6">
       <h2>What is it about? </h2>
       <p><%= @concert.description %> </p>
     </div>
+
       <div class = "col-md-6">
         <div class = "row">
-          <div class = "col-md-6">
-            <h1>Where?</h1>
-            <p><%= @venue.name %>, <%= @venue.address1 %>, <%= @venue.city %>, <%= @venue.postal_code %>   </p>
-            <p></p>
+        <div class = "col-md-12">
+          <div class = "row">
+            <% if @is_attending == false %>
+              <%= form_for(@attendee) do |f| %>
+              <%= f.hidden_field :user_id, value: session[:user_id] %>
+              <%= f.hidden_field :concert_id, value: @concert.id %>
+              <%= f.hidden_field :response, value: 2 %>
+              <%= f.submit "I wanna join", :class=> "btn btn-primary btn-lg joining-button", :id => "coming-button" %>
+              <% end %>
+            <% else %>
+            <div id = "you-in"> You are in </div>
+            <% end %>
           </div>
-          <div class = "container">
-            <div class = "col-md-6">
-              <!-- Button for attendance -->
-                <%= form_for(@attendee) do |f| %>
-                <%= f.hidden_field :user_id, value: session[:user_id] %>
-                <%= f.hidden_field :concert_id, value: @concert.id %>
-                <%= f.hidden_field :response, value: 2 %>
-                <%= f.submit "I'm coming", :class=> "btn btn-primary btn-lg my-concert-button" %>
-                <% end %>
-
-              <!-- Attendees -->
-              <h2>Attendees</h2>
-             <% @users.each do |attendee| %>
-             <div class="attendee-container col-md-2">
-               <p><%= attendee.first_name %></p>
-             </div>
-             <% end %>
-
+        </div>
+        <div class = "row">
+          <div class = "col-md-4">
+            <h1>Where?</h1>
+          </div>
+          <div class = "col-md-8">
+            <div class = "row attendees-container">
+                <% if @attendees.any? %>
+                <h1>Who is in?</h1>
+                <% @attendees.each do |attendee| %>
+                 <div class="attendee-container col-md-1">
+                   <p><%= attendee.first_name %></p>
+                 </div>
+                 <% end %>
+              <% end %>
             </div>
           </div>
+
+        </div>
 
 <!-- Google maps frame -->
       <iframe

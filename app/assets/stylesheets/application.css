@@ -122,17 +122,39 @@ footer {
   /* Set the fixed height of the footer here */
   height: 160px;
 }
-.my-concert-button{
-  background-color: red;
+.joining-button{
   border-style: none;
   margin-top: 30px;
+  background-color: red;
+  width: 365px;
+  height: 60px;
+  font-size: 30px;
 }
-.my-concert-button:hover{
-  background-color: #09B24B;
+
+#you-in{
+  background-color: #14CC5C;
+  width: 100%;
+  height: 60px;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5px;
+  padding-top: 5px;
 }
-.my-concert-button:focus{
-  background-color: #09B24B;
+.joining-button:hover{
+  background-color: #D01031;
 }
+.joining-button:focus{
+  background-color: #D01031;
+}
+.attendees-container{
+  overflow: hidden;
+  margin-left: 10px;
+
+}
+.attendees-container p{
+  text-align: center;
+  }
 
 /* Layer for readibility */
 .layer {
