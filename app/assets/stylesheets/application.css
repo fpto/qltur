@@ -171,5 +171,26 @@ footer {
 /* Layer for readibility */
 .layer {
     background-color: rgba(29, 0, 51, 0.5);
-
+}
+/*Sign up form style*/
+.signup-form{
+  text-align: center;
+  margin-top: 20px;
+}
+.form-field{
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.form-field input{
+  text-align: center;
+}
+.form-field .btn-submit{
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+  border-style: none;
+  font-size: 20px;
+  padding: 10px 40px;
 }

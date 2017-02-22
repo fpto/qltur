@@ -1,18 +1,16 @@
-<div class="login">
+<div class="signup-form">
   <div class="container">
     <div class="form">
-
-    <h1>Sign up</h1>
-
+    <h1>You are almost there</h1>
     <%= form_for(@user) do |f| %>
-      <%= f.text_field :first_name, :placeholder => "First name" %>
-      <%= f.text_field :last_name, :placeholder => "Last name" %>
-      <%= f.email_field :email, :placeholder => "Email" %>
-      <%= f.password_field :password, :placeholder => "Password" %>
-      <%= f.submit "Create an account", class: "btn-submit" %>
+      <div class = "form-field"><%= f.text_field :first_name, :placeholder => "first name" %> </div>
+      <div class = "form-field"><%= f.text_field :last_name, :placeholder => "last name" %> </div>
+      <div class = "form-field"><%= f.email_field :email, :placeholder => "email" %></div>
+      <div class = "form-field"><%= f.password_field :password, :placeholder => "password" %></div>
+      <div class = "form-field"><%= f.submit "sign up", class: "btn-submit" %></div>
     <% end %>
 
-  
+
     </div>
   </div>
 </div>
