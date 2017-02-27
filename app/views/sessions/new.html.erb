@@ -2,7 +2,7 @@
   <div class="container">
     <div class="form">
       <h1>Welcome back you sexy thing</h1>
-      <div class = "form-field"><%= form_for(:session, url: login_path) do |f| %> </div>
+      <%= form_for(:session, url: login_path) do |f| %>
       <div class = "form-field"><%= f.email_field :email, :placeholder => "Email" %> </div>
       <div class = "form-field"><%= f.password_field :password, :placeholder => "Password" %> </div>
       <div class = "form-field"><%= f.submit "Log in", class: "btn-submit" %></div>

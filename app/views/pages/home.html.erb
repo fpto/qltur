@@ -11,22 +11,23 @@
 <!-- This the This week in Berlin section -->
 <div class = "thisWeekConcerts">
   <div class = "row">
-  <div class = "row">
     <div class = "container">
-        <h2> This week in Berlin </h2>
-        <% @thisWeekConcerts.each do |concert| %>
-        <a href=" <%=  concert_path(concert) %>">
-          <div class="col-md-3">
-        		<div class="tile-container" style="background-image: url(<%= concert.image_url %>); background-color: rgba(29, 0, 51, 0.5)">
-              <div class = "tile-content">
-                <p class="tile-title"><%= concert.title %></p>
-          			<p class="tile-description"><%= concert.description %></p>
-                <%= link_to "Learn more", concert_path(concert) %>
-        		  </div>
-      	    </div>
-          </div>
-        </a>
-      <% end %>
+      <h2> This week in Berlin </h2>
+      <% @thisWeekConcerts.each do |concert| %>
+          <a href=" <%=  concert_path(concert) %>">
+            <div class="col-md-3">
+              <div class="tile-container" style="background-image: url(<%= concert.image_url %>); background-color: rgba(29, 0, 51, 0.5)">
+                <div class = "tile-content">
+                  <p class="tile-title"><%= concert.title %></p>
+                  <p class="tile-description"><%= concert.description %></p>
+                  <p class = "title-description"><%= concert.date.strftime("%A") %> at <%= concert.time.strftime("%H:%M ") %> </p>
+                  <%= link_to "Learn more", concert_path(concert) %>
+                </div>
+              </div>
+            </div>
+          </a>
+        <% end %>
+
     </div>
   </div>
 </div>
