@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'signup'  => 'users#new'
   get 'welcome' => 'users#welcome'
+  get 'myconcerts' => 'users#myconcerts'
   resources :users
 
   get 'login' => 'sessions#new'

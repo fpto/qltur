@@ -1,0 +1,51 @@
+<div class = "jumbotron-container" >
+  <div class="jumbotron layer">
+   <div class="container">
+     <h1><%= @user.first_name %> <%= @user.last_name %> </h1>
+      <p>This guy knows what time it is!</p>
+   </div>
+ </div>
+</div>
+
+<div class = "row">
+  <div class = "container">
+    <h2>Next giggs</h2>
+    <% if @futureConcerts.any? %>
+      <% @futureConcerts.each do |concert| %>
+        <a href=" <%=  concert_path(concert) %>">
+          <div class="col-md-3">
+        		<div class="tile-container" style="background-image: url(<%= concert.image_url %>); background-color: rgba(29, 0, 51, 0.5)">
+              <div class = "tile-content">
+                <p class="tile-title"><%= concert.title %></p>
+          			<p class="tile-description"><%= concert.description %></p>
+                <%= link_to "Learn more", concert_path(concert) %>
+        		  </div>
+      	    </div>
+          </div>
+        </a>
+      <% end %>
+    <% else %>
+    <p> No plans yet? <a href="/concerts">Find your first gig!</a> </p>
+    <% end %>
+  </div>
+</div>
+<div class = "row">
+  <div class = "container">
+    <% if @lastYearConcerts.any? %>
+      <h2>Past giggs</h2>
+      <% @lastYearConcerts.each do |concert| %>
+        <a href=" <%=  concert_path(concert) %>">
+          <div class="col-md-3">
+        		<div class="tile-container" style="background-image: url(<%= concert.image_url %>); background-color: rgba(29, 0, 51, 0.5)">
+              <div class = "tile-content">
+                <p class="tile-title"><%= concert.title %></p>
+          			<p class="tile-description"><%= concert.description %></p>
+                <%= link_to "Learn more", concert_path(concert) %>
+        		  </div>
+      	    </div>
+          </div>
+        </a>
+      <% end %>
+    <% end %>
+  </div>
+</div>
