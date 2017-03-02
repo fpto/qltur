@@ -1,23 +1,23 @@
-<%= form_for(@concert) do |f| %>  
-  <div class="field"> 
-    <%= f.label :concert %><br> 
-    <%= label_tag(:title, "Concert title:") %><br> 
+<%= form_for(@concert) do |f| %>
+  <div class="field">
+    <%= f.label :concert, "New Concert" %><br>
+    <%= label_tag(:title, "Concert title:") %><br>
     <%= f.text_area :title %> <br>
     <%= label_tag(:time, "Time:") %><br>
-    <%= f.text_area :time %> <br> 
-    <%= label_tag(:date, "Date:") %><br> 
-    <%= f.date_field(:date) %><br> 
-    <%= label_tag(:band, "Name of the Band:") %><br> 
-    <%= f.text_area :band %><br> 
-    <%= label_tag(:description, "Concer Description:") %><br> 
-    <%= f.text_area :description %><br> 
-    <%= label_tag(:image_url, "Concert Image URL:") %><br> 
-    <%= f.text_area :image_url %><br> 
-    <%= label_tag(:venue_id, "Select the Venue:") %><br> 
-    <%= f.collection_select :venue_id, Venue.order(:id),:id,:name, include_blank: true %><br> 
+    <%= f.time_select(:time, {minute_step: 15}) %> <br>
+    <%= label_tag(:date, "Date:") %><br>
+    <%= f.date_select(:date, :order => [:day, :month, :year]) %><br>
+    <%= label_tag(:band, "Name of the Band:") %><br>
+    <%= f.text_area :band %><br>
+    <%= label_tag(:description, "Concert Description:") %><br>
+    <%= f.text_area :description %><br>
+    <%= label_tag(:image_url, "Concert Image URL:") %><br>
+    <%= f.text_area :image_url %><br>
+    <%= label_tag(:venue_id, "Select the Venue:") %><br>
+    <%= f.collection_select :venue_id, Venue.order(:id),:id,:name, include_blank: true %><br>
 
-  </div> 
-  <div class="actions"> 
-    <%= f.submit "Create" %> 
-  </div> 
+  </div>
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
 <% end %>
