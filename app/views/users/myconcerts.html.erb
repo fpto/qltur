@@ -40,6 +40,7 @@
               <div class = "tile-content">
                 <p class="tile-title"><%= concert.title %></p>
           			<p class="tile-description"><%= concert.description %></p>
+                <p class = "title-description"><%= concert.date.strftime("%A") %> at <%= concert.time.strftime("%H:%M ") %> </p>
                 <%= link_to "Learn more", concert_path(concert) %>
         		  </div>
       	    </div>

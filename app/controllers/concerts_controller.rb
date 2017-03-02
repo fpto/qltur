@@ -4,6 +4,10 @@ before_action :require_editor, only: [:edit, :update]
 before_action :require_admin, only: [:destroy]
 	def index
 		@concerts = Concert.all
+		future_range = (DateTime.now..(DateTime.now + 365.days))
+    @futureConcerts = (@concerts.select{|concert| future_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
+    last_year_range = ((DateTime.now - 365.days)..DateTime.now)
+    @lastYearConcerts = (@concerts.select{|concert| last_year_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
 	end
 
 	def new
