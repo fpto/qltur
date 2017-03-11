@@ -22,9 +22,9 @@ before_action :require_admin, only: [:destroy]
   def show
       @venue = Venue.find(params[:id])
       @concerts = @venue.concerts
-			future_range = (DateTime.now..(DateTime.now + 365.days))
+			future_range = ((DateTime.now-1.days)..(DateTime.now + 365.days))
 	    @futureConcerts = (@concerts.select{|concert| future_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
-	    last_year_range = ((DateTime.now - 365.days)..DateTime.now)
+	    last_year_range = ((DateTime.now - 365.days)..(DateTime.now-1.days))
 	    @lastYearConcerts = (@concerts.select{|concert| last_year_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
       @cleanAddress1 = @venue.address1.gsub(' ','+')
       @cleanPostalcode = @venue.postal_code.gsub(' ','+')
