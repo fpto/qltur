@@ -6,8 +6,8 @@
       <div class = "form-field"><%= f.email_field :email, :placeholder => "Email" %> </div>
       <div class = "form-field"><%= f.password_field :password, :placeholder => "Password" %> </div>
       <div class = "form-field"><%= f.submit "Log in", class: "btn-submit" %></div>
-<% end %>
-
+      <% end %>
+      <div><p>Not a user yet?</p> <%= link_to "Join the club", 'signup' %> </div>
 
     </div>
   </div>
