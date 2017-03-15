@@ -10,6 +10,7 @@ class ConcertsController < ApplicationController
     @lastYearConcerts = (@concerts.select{|concert| last_year_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
 		#SEO
 		@meta_title = meta_title 'All Gigs'
+		@meta_description = ‘Find live music in the hidden venues of Berlin. Rock, punk, funk and no junk! From Hipster Friedrichschain to fancy Mitte.’
 	end
 
 	def new
@@ -28,6 +29,7 @@ class ConcertsController < ApplicationController
     @venue = @concert.venue
 		#SEO
 		@meta_title = meta_title @concert.title
+		@meta_description = @concert.description
 		# Cleaninf Address for the Google Map TODO refactor into an object
     @cleanAddress1 = @venue.address1.gsub(' ','+')
     @cleanPostalcode = @venue.postal_code.gsub(' ','+')

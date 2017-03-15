@@ -27,6 +27,7 @@ before_action :require_admin, only: [:destroy]
 
 			#SEO
 			@meta_title = meta_title @venue.name
+			@meta_description = @venue.description
 
 			#Organizing and Filtering Concerts
 			future_range = ((DateTime.now-1.days)..(DateTime.now + 365.days))
