@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @concerts = @user.concerts
   end
   def myconcerts

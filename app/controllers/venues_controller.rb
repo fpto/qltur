@@ -22,7 +22,7 @@ before_action :require_admin, only: [:destroy]
   end
 
   def show
-      @venue = Venue.find(params[:id])
+			@venue = Venue.friendly.find(params[:id])
       @concerts = @venue.concerts
 
 			#SEO
@@ -43,7 +43,7 @@ before_action :require_admin, only: [:destroy]
   end
 
   def destroy
-    @venue = Venue.find(params[:id])
+    @venue = Venue.friendly.find(params[:id])
     @venue.destroy
     redirect_to root_url
   end

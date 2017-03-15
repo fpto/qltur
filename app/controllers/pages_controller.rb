@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 		@thisWeekConcerts = (@concerts.select{|concert| range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
 		#SEO
 		@meta_title = meta_title 'Live Indie Music in Berlin'
-		@meta_description = ‘Find live music in the hidden venues of Berlin. Rock, punk, funk and no junk! From Hipster Friedrichschain to fancy Mitte.’
+		@meta_description = 'Find live music in the hidden venues of Berlin. Rock, punk, funk and no junk! From Hipster Friedrichschain to fancy Mitte.'
 	end
 	def imprint
 		@meta_title = meta_title 'Imprint'

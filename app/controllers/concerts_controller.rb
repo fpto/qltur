@@ -10,7 +10,7 @@ class ConcertsController < ApplicationController
     @lastYearConcerts = (@concerts.select{|concert| last_year_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
 		#SEO
 		@meta_title = meta_title 'All Gigs'
-		@meta_description = ‘Find live music in the hidden venues of Berlin. Rock, punk, funk and no junk! From Hipster Friedrichschain to fancy Mitte.’
+		@meta_description = 'Find live music in the hidden venues of Berlin. Rock, punk, funk and no junk! From Hipster Friedrichschain to fancy Mitte.'
 	end
 
 	def new
@@ -25,7 +25,7 @@ class ConcertsController < ApplicationController
 		end
 	end
   def show
-    @concert = Concert.find(params[:id])
+		@concert = Concert.friendly.find(params[:id])
     @venue = @concert.venue
 		#SEO
 		@meta_title = meta_title @concert.title
@@ -37,7 +37,7 @@ class ConcertsController < ApplicationController
     @cleanCountry = @venue.country.gsub(' ','+')
 
 		#saves users coming to this concert
-		@concerts = Concert.find(params[:id])
+		@concerts = Concert.friendly.find(params[:id])
 		@attendees = @concerts.users
 		#creates attendee for I'm coming function
 		@attendee = Attendee.new
@@ -49,10 +49,10 @@ class ConcertsController < ApplicationController
 		end
   end
   def edit
-    @concert = Concert.find(params[:id])
+    @concert = Concert.friendly.find(params[:id])
   end
   def update
-  	@concert = Concert.find(params[:id])
+  	@concert = Concert.friendly.find(params[:id])
     if @concert.update(concert_params)
       redirect_to @concert
     else
@@ -60,7 +60,7 @@ class ConcertsController < ApplicationController
   end
   end
   def destroy
-    @concert = Concert.find(params[:id])
+    @concert = Concert.friendly.find(params[:id])
     @concert.destroy
     redirect_to root_url
   end
