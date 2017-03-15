@@ -9,15 +9,21 @@ class UsersController < ApplicationController
     @concerts = @user.concerts
   end
   def myconcerts
+    # Find and saving concerts for the current user
     @user = current_user
     @concerts = @user.concerts
     future_range = ((DateTime.now-1.days)..(DateTime.now + 365.days))
     @futureConcerts = (@concerts.select{|concert| future_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
     last_year_range = ((DateTime.now - 365.days)..DateTime.now)
     @lastYearConcerts = (@concerts.select{|concert| last_year_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
+
+    #SEO
+    @meta_title = meta_title 'My Concerts'
 	end
   def new
     @user = User.new
+    #SEO
+    @meta_title = meta_title 'Sign up'
   end
   def create
   @user = User.new(user_params)

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @meta_title = meta_title 'Log in'
   end
   def create
 	  @user = User.find_by_email(params[:session][:email])

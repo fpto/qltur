@@ -4,6 +4,8 @@ before_action :require_editor, only: [:edit]
 before_action :require_admin, only: [:destroy]
 	def index
 		@venues = Venue.all
+		#SEO
+		@meta_title = meta_title 'All Venues'
 	end
 
   def new
@@ -22,10 +24,17 @@ before_action :require_admin, only: [:destroy]
   def show
       @venue = Venue.find(params[:id])
       @concerts = @venue.concerts
+
+			#SEO
+			@meta_title = meta_title @venue.name
+
+			#Organizing and Filtering Concerts
 			future_range = ((DateTime.now-1.days)..(DateTime.now + 365.days))
 	    @futureConcerts = (@concerts.select{|concert| future_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
 	    last_year_range = ((DateTime.now - 365.days)..(DateTime.now-1.days))
 	    @lastYearConcerts = (@concerts.select{|concert| last_year_range.cover?(concert.date)}).sort! { |a,b| a.date <=> b.date }
+
+			#Cleaning Address for Google Map TODO MERGE WITH THE ONE FROM CONCERT
       @cleanAddress1 = @venue.address1.gsub(' ','+')
       @cleanPostalcode = @venue.postal_code.gsub(' ','+')
       @cleanCity = @venue.city.gsub(' ','+')
