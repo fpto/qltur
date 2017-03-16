@@ -16,5 +16,8 @@
 !/log/.keep
 /tmp
 
-#Ignore D_Store from Mac 
+#Ignore D_Store from Mac
 .DS_Store
+
+./public/sitemap.xml.gz
+./public/.sitemap.xml.gz.swp
